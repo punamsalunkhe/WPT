@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            border: 2px solid red;
+            border-radius: 20px;
+        }
+    </style>
+    <script src = "./script/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                $("div").animate({"width":"200px","height":"200px"
+            },2000,function(){console.log("animation done")})
+            })
+        })
+    </script>
+</head>
+<body>
+    <button type="button" name="btn" id="btn">animate div</button>
+    <div>
+        this is div1
+    </div>
+</body>
+</html>
+
+
+Output:-Click on button and see animation effect
+
+
+ 
+
+2).2nd animation effect
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            border: 2px solid red;
+            border-radius: 20px;
+        }
+    </style>
+    <script src = "./script/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                var div= $("div");
+                div.animate({"width":"200px","height":"200px"
+            },2000,function(){console.log("animation done")})
+             div.animate({fontSize:"3em"},"slow")
+            })
+        })
+    </script>
+</head>
+<body>
+    <button type="button" name="btn" id="btn">animate div</button>
+    <div>
+        this is div1
+    </div>
+</body>
+</html>
+
+Output:-click on button
+ 
+
+3) append, prepend, remove append, remove prepend
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#append").click(function(){
+                var p="<p class='p1'>This is append para</p>"
+                $("div").append(p)
+            })
+
+            $("#prepend").click(function(){
+                var p="<p class='p2'>This is append para</p>"
+                $("div").prepend(p)
+            })
+
+            $("#removeappend").click(function(){
+              
+                $('p').remove('.p1')
+            })
+
+            $("#removeprepend").click(function(){
+               
+                $('p').remove('.p2')
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <button type="button" name="append" id="append">append para</button>
+    <button type="button" name="prepend" id="prepend">prepend para</button>
+    <button type="button" name="removeappend" id="removeappend">removeappend para</button>
+    <button type="button" name="removeprepend" id="removeprepend">remove prepend para</button>
+    <div>
+        This is div
+    </div>
+</body>
+</html>
+
+
+Output:-1) click on append button ,data add from after last child selector
+2) click on prepend button, data add before first child selector
+
+ 
+3) css in jquery
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('p,h1,h2').css({"background-color":"cyan",
+                  "color":"blue","font-size":"40px"
+                })
+       
+        $('.myclass').css("border","2px solid red")
+    })
+    </script>
+</head>
+<body>
+    <h2 class="myclass">This is h2</h2>
+    <p>This is a paragraph</p>
+    <h1 class="myclass">This is h1</h1>
+    <div>
+        <h2 class="myclass">This is h2</h2>
+        <p>This is a paragraph</p>
+        <h1 class="myclass">This is h1</h1>
+    </div>
+</body>
+</html>
+
+Output
+ 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script/jquery.js"></script>
+  
+ <script>
+    $(document).ready(function(){
+        //this function is called when the button is clicked
+     $("#submit").click(function(){
+        //val() method is used to get the values from
+        //textarea and stored in txt variables
+        var txt=$("#number").val();
+        alert(txt);
+        if(txt<0)
+        {
+            alert("Entered number is out of range");
+        }
+        else if(txt>1000)
+        {
+            alert("Entered number is out of range");
+        }
+        else{
+          
+        }
+
+     })
+    })
+ </script>
+</head>
+<body>
+    Number:<input type="text" name="number" id="number"><br>
+    Submit:<button type="button" name="submit" id="submit">Submit</button><br>
+    Result:<input type="text" name="result" id="result"><br>
+    <div id="mydiv"></div>
+</body>
+</html>
+
